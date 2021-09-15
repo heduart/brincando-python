@@ -8,11 +8,19 @@ def test_criar_envio_de_email():
 
 def test_remetente():
     enviar_email = EnviarEmail()
-    resultado = enviar_email.enviar(
-        'felipe@terra.com.br',
-        'lucia_firmino@yahoo.com.br',
-        'Aprendendo Python com Testes',
-        'Primeiros Testes em Deselvolvimento'
-    )
+    destinatarios = ['felipe@terra.com.br', 'carlos_gonzales@hotmail.com', 'heduarte2003@yahoo.com.br']
 
-    assert 'felipe@terra.com.br' in resultado
+    remetente = ['lucia_firmino@yahoo.com.br']
+    assunto = 'Aprendendo Python com Testes'
+    descricao = 'Primeiros Testes em Deselvolvimento'
+
+    for destinatario in destinatarios:
+        resultado = enviar_email.enviar(
+            destinatario,
+            remetente,
+            assunto,
+            descricao
+        )
+        assert destinatario in destinatarios
+
+
