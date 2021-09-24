@@ -22,5 +22,3 @@ def test_remetente():
             descricao
         )
         assert destinatario in destinatarios
-
-
